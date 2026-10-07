@@ -45,11 +45,10 @@
         {
           continue;
         }
-        // Keep the later enemy if two have equal health.
-          if (target && target.health > enemy.health) {
-          continue;
-          }
+        // Replace target if empty and Keep the later enemy if two have equal health.
+          if (!target || target.health <= enemy.health) {
           target = enemy;
+          }
       }
       return target;
     }
